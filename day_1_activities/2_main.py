@@ -42,12 +42,18 @@
 import student_data
 
 # print(student_data.students)
-students = student_data.students
-print(len(students))
-print(students[0]['Combo,Name'])
-print(students[0]['Email'][0])
-print(students[0]['Email'][1])
+students = student_data.students # imports the data from the student_data.py file
+print(len(students)) # length of the list
+print(students[0]['Combo,Name']) # index 0 (first dict), key called 'Combo: Name'
+print(students[0]['Email'][0]) # index 0, key called 'Email', first 'Email'
+print(students[0]['Email'][1]) # index 0, key called 'Email', second 'Email'
+print(students[0]['FName'])
+print(students[0]['MName'])
+print(students[0]['HR'])
+print(students[1]['CPSID'])
+print(students[1]['Combo,Name'])
 
+print(students[2]['Email'])
 # What is being counted?
 
 # If the output is 36, what does that tell you?
@@ -68,11 +74,18 @@ print(students[0]['Email'][1])
 #and printing the name and email of the students
 #we are also printing a line of underscores to separate the students
 #we are also printing a line of underscores to separate the students
-for student in students:
-    print(student['Combo,Name'])
-    print(student['Email'][0])
-    print(student['Email'][1])
-    print("_"*25)
+# for student in students:
+#     print(student['Combo,Name'])
+#     print(student['Email'][0])
+#     print(student['Email'][1])
+#     print(student['GL'])
+#     print(student['HR'])
+#     print(student['CPSID'])
+#     student.update({"Lunch": "Reduced"})
+#     print(student["Lunch"])
+#     if student["GL"] >= 10:
+#         print("Off Campus Lunch")
+#     print("_"*25)
 
 # What does the loop variable student represent on each pass?
 
@@ -92,6 +105,12 @@ name = input("what is you name?")
 for student in students:
     if name == student['Combo,Name']:
         print(student['Combo,Name'])
+        print("this works")
+
+cpsid = input("What is your CPSID?: ")
+for student in students:
+    if cpsid == student["CPSID"]:
+        print(student['CPSID'])
         print("this works")
 
 # What is the goal of this search?
