@@ -93,14 +93,15 @@ combo_name = last_name, first_name
 # 3. Store all of the new information into ONE dictionary 
     #    that matches the structure of the existing student data.
 # 4. Add (append) that new dictionary into the main students list.
-student.append = ({"CPSID": {cpsid},
-                  "Combo,Name": {combo_name},
-                   "LName": {last_name},
-                   "FName": {first_name},
-                   "MName": {middle_name},
-                   "HR": {homeroom},
-                   "GL": {grade_level},
-                   "Email": {primary_email, secondary_email}})
+new_student = ({"CPSID": {cpsid},
+                "Combo,Name": {combo_name},
+                "LName": {last_name},
+                "FName": {first_name},
+                "MName": {middle_name},
+                "HR": {homeroom},
+                "GL": {grade_level},
+                "Email": {primary_email, secondary_email}})
+students.append(new_student)
 
 
 # 5. After adding the student, the program must:
@@ -116,5 +117,13 @@ student.append = ({"CPSID": {cpsid},
         #    - Do NOT add the student
         #    - Display an error message saying the CPS ID is already taken
 
-
+id_list = [ ]
+for student in students.values():
+    id_list.append('CPSID')
+for i in range(len(students)):
+    if cpsid in id_list:
+        print("Error: CPS ID is already taken.")
+        print("Unregistering new student.")
+    else:
+        continue
 
